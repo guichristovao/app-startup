@@ -2,7 +2,7 @@ object Versions {
     const val compose = "1.0.5"
     const val androidXCore = "1.7.0"
     const val androidXAppCompat = "1.4.1"
-    const val lifecycleRuntime = "2.4.0"
+    const val lifecycle = "2.4.0"
     const val activityCompose = "1.4.0"
     const val material = "1.5.0"
 

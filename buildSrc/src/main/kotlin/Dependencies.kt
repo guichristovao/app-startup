@@ -1,7 +1,10 @@
 object AndroidX {
     val core by lazy { "androidx.core:core-ktx:${Versions.androidXCore}" }
     val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.androidXAppCompat}" }
-    val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}" }
+    val lifecycleRuntime by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}" }
+    val lifecycleViewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}" }
+    val lifecycleLiveData by lazy { "androidx.lifecycle:lifecycle-livedata-core-ktx:${Versions.lifecycle}" }
+    val lifecycleViewModelCompose by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}" }
     val activityCompose by lazy { "androidx.activity:activity-compose:${Versions.activityCompose}" }
 
     /**
@@ -16,11 +19,12 @@ object Compose {
     val material by lazy { "androidx.compose.material:material:${Versions.compose}" }
     val uiToolingPreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Versions.compose}" }
     val uiTooling by lazy { "androidx.compose.ui:ui-tooling:${Versions.compose}" }
+    val runtimeLiveData by lazy { "androidx.compose.runtime:runtime-livedata:${Versions.compose}" }
 
     /**
      * Test
      */
-    val compose by lazy { "androidx.compose.ui:ui-test-junit4:${Versions.compose}" }
+    val junit by lazy { "androidx.compose.ui:ui-test-junit4:${Versions.compose}" }
 }
 
 object Google {
