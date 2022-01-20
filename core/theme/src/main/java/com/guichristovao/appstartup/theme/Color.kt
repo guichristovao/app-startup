@@ -1,4 +1,4 @@
-package com.guichristovao.appstartup.ui.theme
+package com.guichristovao.appstartup.theme
 
 import androidx.compose.ui.graphics.Color
 
