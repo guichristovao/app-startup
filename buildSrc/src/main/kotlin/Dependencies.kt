@@ -29,6 +29,16 @@ object Compose {
 
 object Google {
     val material by lazy { "com.google.android.material:material:${Versions.material}" }
+    val gson by lazy { "com.google.code.gson:gson:${Versions.gson}" }
+}
+
+object Square {
+    val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
+    val converterGson by lazy { "com.squareup.retrofit2:converter-gson:${Versions.retrofit}" }
+}
+
+object Kotlin {
+    val coroutines by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}" }
 }
 
 object Test {

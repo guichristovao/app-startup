@@ -5,6 +5,9 @@ object Versions {
     const val lifecycle = "2.4.0"
     const val activityCompose = "1.4.0"
     const val material = "1.5.0"
+    const val retrofit = "2.9.0"
+    const val gson = "2.8.5"
+    const val coroutines = "1.3.9"
 
     /**
      * Testing
