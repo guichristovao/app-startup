@@ -55,12 +55,6 @@ dependencies {
     implementation(AndroidX.core)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleRuntime)
-    implementation(AndroidX.activityCompose)
-    implementation(Compose.ui)
-    implementation(Compose.material)
-    implementation(Compose.uiToolingPreview)
-
-    implementation(Google.material)
 
     debugImplementation(Compose.uiTooling)
 

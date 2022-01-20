@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppStartup">
         <activity
-            android:name=".MainActivity"
+            android:name="com.guichristovao.appstartup.feature_one.FeatureOneActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppStartup.NoActionBar">
