@@ -49,6 +49,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:network"))
+    implementation(project(":feature:feature-one"))
+
     implementation(AndroidX.core)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleRuntime)
@@ -65,5 +68,5 @@ dependencies {
 
     androidTestImplementation(AndroidX.junit)
     androidTestImplementation(AndroidX.espresso)
-    androidTestImplementation(Compose.compose)
+    androidTestImplementation(Compose.junit)
 }
