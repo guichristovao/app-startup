@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Network {
 
     lateinit var serviceCreator: ServiceCreator
+        private set
     lateinit var exceptionHandler: ExceptionHandler
 
     fun init(): ServiceCreator {
