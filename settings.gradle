@@ -2,5 +2,6 @@ rootProject.name = "app-startup"
 include ':app'
 include ':core:network'
 include ':core:network-support'
+include ':core:splash-screen'
 include ':core:theme'
 include ':feature:feature-one'

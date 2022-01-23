@@ -6,6 +6,7 @@ object AndroidX {
     val lifecycleLiveData by lazy { "androidx.lifecycle:lifecycle-livedata-core-ktx:${Versions.lifecycle}" }
     val lifecycleViewModelCompose by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}" }
     val activityCompose by lazy { "androidx.activity:activity-compose:${Versions.activityCompose}" }
+    val coreSplashScreen by lazy { "androidx.core:core-splashscreen:${Versions.coreSplashScreen}" }
 
     /**
      * Test
