@@ -1,3 +1,9 @@
+object Libs {
+    object Coil {
+        const val coilCompose = "io.coil-kt:coil-compose:1.4.0"
+    }
+}
+
 object AndroidX {
     val core by lazy { "androidx.core:core-ktx:${Versions.androidXCore}" }
     val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.androidXAppCompat}" }

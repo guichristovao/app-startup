@@ -1,5 +1,5 @@
 object Versions {
-    const val compose = "1.0.5"
+    const val compose = "1.1.0-rc01"
     const val androidXCore = "1.7.0"
     const val androidXAppCompat = "1.4.1"
     const val lifecycle = "2.4.0"

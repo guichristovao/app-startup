@@ -38,12 +38,8 @@ android {
 }
 
 dependencies {
-    implementation(AndroidX.activityCompose)
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleLiveData)
-    implementation(Compose.ui)
+    implementation(Libs.Coil.coilCompose)
+    implementation(Compose.uiTooling)
     implementation(Compose.material)
-    implementation(Compose.uiToolingPreview)
-    implementation(Compose.runtimeLiveData)
     implementation(Google.material)
 }
