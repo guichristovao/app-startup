@@ -1,6 +1,6 @@
 buildscript {
     extra.apply{
-        set("kotlinVersion", "1.5.31")
+        set("kotlinVersion", "1.6.0")
     }
     val gradleVersion = "7.0.4"
     val kotlinVersion = extra.get("kotlinVersion") as String
