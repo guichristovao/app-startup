@@ -38,16 +38,16 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:theme"))
     implementation(project(":core:network-support"))
+    implementation(project(":core:theme"))
+
+    api(project(":core:splash-screen"))
 
     implementation(AndroidX.activityCompose)
     implementation(AndroidX.lifecycleViewModel)
     implementation(AndroidX.lifecycleViewModelCompose)
     implementation(AndroidX.lifecycleLiveData)
-    implementation(Compose.ui)
     implementation(Compose.material)
-    implementation(Compose.uiToolingPreview)
     implementation(Compose.runtimeLiveData)
     implementation(Google.material)
     implementation(Google.gson)

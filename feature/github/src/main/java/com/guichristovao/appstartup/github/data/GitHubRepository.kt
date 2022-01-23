@@ -1,4 +1,6 @@
-package com.guichristovao.appstartup.feature_one
+package com.guichristovao.appstartup.github.data
+
+import com.guichristovao.appstartup.github.data.source.remote.GitHubService
 
 class GitHubRepository(
     private val gitHubService: GitHubService

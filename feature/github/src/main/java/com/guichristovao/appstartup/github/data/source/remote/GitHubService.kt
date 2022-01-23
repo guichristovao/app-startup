@@ -1,6 +1,6 @@
-package com.guichristovao.appstartup.feature_one
+package com.guichristovao.appstartup.github.data.source.remote
 
-import retrofit2.Response
+import com.guichristovao.appstartup.github.data.model.GitHubUser
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -9,5 +9,5 @@ interface GitHubService {
     @GET("users/{user}")
     suspend fun getUser(
         @Path("user") user: String?
-    ): Response<GitHubUser>
+    ): GitHubUser
 }

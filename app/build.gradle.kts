@@ -50,7 +50,7 @@ android {
 
 dependencies {
     implementation(project(":core:network"))
-    implementation(project(":feature:feature-one"))
+    implementation(project(":feature:github"))
 
     implementation(AndroidX.core)
     implementation(AndroidX.appCompat)
