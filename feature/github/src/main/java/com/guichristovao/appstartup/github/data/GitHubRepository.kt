@@ -1,8 +1,9 @@
 package com.guichristovao.appstartup.github.data
 
 import com.guichristovao.appstartup.github.data.source.remote.GitHubService
+import javax.inject.Inject
 
-class GitHubRepository(
+class GitHubRepository @Inject constructor(
     private val gitHubService: GitHubService
 ) {
 

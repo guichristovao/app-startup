@@ -1,9 +1,6 @@
 buildscript {
-    extra.apply{
-        set("kotlinVersion", "1.6.0")
-    }
     val gradleVersion = "7.0.4"
-    val kotlinVersion = extra.get("kotlinVersion") as String
+    val kotlinVersion = "1.6.0"
 
     repositories {
         google()
@@ -13,6 +10,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:$gradleVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath(Libs.Google.Dagger.hiltPlugin)
     }
 }
 

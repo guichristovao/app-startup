@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -53,4 +55,11 @@ dependencies {
     implementation(Google.gson)
     implementation(Square.retrofit)
     implementation(Kotlin.coroutines)
+
+    implementation(Libs.Google.Dagger.hilt)
+    kapt(Libs.Google.Dagger.hiltCompiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

@@ -2,6 +2,15 @@ object Libs {
     object Coil {
         const val coilCompose = "io.coil-kt:coil-compose:1.4.0"
     }
+
+    object Google {
+        object Dagger {
+            private const val version = "2.38.1"
+            const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+            const val hilt = "com.google.dagger:hilt-android:$version"
+            const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
+        }
+    }
 }
 
 object AndroidX {
