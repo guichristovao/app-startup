@@ -3,6 +3,7 @@ package com.guichristovao.appstartup.github.di
 import com.guichristovao.appstartup.github.GitHub
 import com.guichristovao.appstartup.github.data.GitHubRepository
 import com.guichristovao.appstartup.github.data.source.remote.GitHubService
+import com.guichristovao.appstartup.network_support.ExceptionHandler
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,5 +21,10 @@ object GitHubModule {
     @Provides
     fun provideGitHubRepository(service: GitHubService): GitHubRepository {
         return GitHubRepository(service)
+    }
+
+    @Provides
+    fun provideExceptionHandler(): ExceptionHandler {
+        return GitHub.exceptionHandler
     }
 }

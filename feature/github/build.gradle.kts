@@ -51,6 +51,7 @@ dependencies {
     implementation(AndroidX.lifecycleLiveData)
     implementation(Compose.material)
     implementation(Compose.runtimeLiveData)
+    implementation(Compose.uiTooling)
     implementation(Google.material)
     implementation(Google.gson)
     implementation(Square.retrofit)

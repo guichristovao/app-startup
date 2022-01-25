@@ -11,6 +11,6 @@ class AppStartupApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Network.init()
-        GitHub.init(Network.serviceCreator)
+        GitHub.init(Network.serviceCreator, Network.exceptionHandler)
     }
 }

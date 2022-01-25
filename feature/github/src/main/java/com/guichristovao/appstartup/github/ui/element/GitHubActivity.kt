@@ -14,9 +14,9 @@ class GitHubActivity : ComponentActivity() {
     private val viewModel: GitHubViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        showSplashScreen { viewModel.loading.value ?: false }
+        showSplashScreen { viewModel.uiState.value is GitHubViewModel.UiState.Default }
         super.onCreate(savedInstanceState)
-        setContent { GitHubApp() }
+        setContent { GitHubScreen() }
 
         getGitHubUser()
     }
