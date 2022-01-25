@@ -12,14 +12,13 @@ object Network {
     lateinit var serviceCreator: ServiceCreator
         private set
     lateinit var exceptionHandler: ExceptionHandler
+        private set
 
-    fun init(): ServiceCreator {
+    fun init() {
         val client = setupOkHttpClient()
         val retrofit = setupRetrofit(client)
         serviceCreator = setupServiceCreator(retrofit)
         exceptionHandler = setupExceptionHandler()
-
-        return serviceCreator
     }
 
     private fun setupOkHttpClient() = OkHttpClient.Builder().build()
@@ -42,8 +41,8 @@ object Network {
     }
 
     private fun setupExceptionHandler() = object : ExceptionHandler {
-        override fun onFailure(throwable: Throwable) {
-            Log.v("app-startup", "Request error: ${throwable.message}")
+        override fun invoke(throwable: Throwable) {
+            Log.v("app-startup", "Error: ${throwable.message}")
         }
     }
 }
