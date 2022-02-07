@@ -52,7 +52,7 @@ android {
 
 dependencies {
     implementation(project(":core:network"))
-    implementation(project(":feature:github"))
+    implementation(project(":feature:profile"))
 
     implementation(AndroidX.core)
     implementation(AndroidX.appCompat)
