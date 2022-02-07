@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    api(project(":core:network-support"))
+    api(project(":core:network-light"))
 
     implementation(Square.retrofit)
     implementation(Square.converterGson)
