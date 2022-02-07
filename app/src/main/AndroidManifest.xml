@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppStartup">
         <activity
-            android:name="com.guichristovao.appstartup.github.ui.element.GitHubActivity"
+            android:name="com.guichristovao.appstartup.profile.ui.element.ProfileActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.App.Starting">

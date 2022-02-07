@@ -1,27 +1,27 @@
-package com.guichristovao.appstartup.github.ui.element
+package com.guichristovao.appstartup.profile.ui.element
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.guichristovao.appstartup.github.ui.state.GitHubViewModel
+import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel
 import com.guichristovao.appstartup.splash_screen.showSplashScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GitHubActivity : ComponentActivity() {
+class ProfileActivity : ComponentActivity() {
 
-    private val viewModel: GitHubViewModel by viewModels()
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        showSplashScreen { viewModel.uiState.value is GitHubViewModel.UiState.Default }
+        showSplashScreen { viewModel.uiState.value is ProfileViewModel.UiState.Default }
         super.onCreate(savedInstanceState)
-        setContent { GitHubScreen() }
+        setContent { ProfileScreen() }
 
-        getGitHubUser()
+        getProfile()
     }
 
-    private fun getGitHubUser() {
+    private fun getProfile() {
         viewModel.getUser("guichristovao")
     }
 }

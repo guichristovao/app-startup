@@ -1,9 +1,9 @@
-package com.guichristovao.appstartup.github
+package com.guichristovao.appstartup.profile
 
 import com.guichristovao.appstartup.network_support.ExceptionHandler
 import com.guichristovao.appstartup.network_support.ServiceCreator
 
-object GitHub {
+object ProfileFeature {
 
     lateinit var serviceCreator: ServiceCreator
         private set

@@ -1,4 +1,4 @@
-package com.guichristovao.appstartup.github.ui.element
+package com.guichristovao.appstartup.profile.ui.element
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,16 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.guichristovao.appstartup.github.data.model.GitHubUser
-import com.guichristovao.appstartup.github.ui.state.GitHubViewModel
-import com.guichristovao.appstartup.github.ui.state.GitHubViewModel.UiState
+import com.guichristovao.appstartup.profile.data.model.GitHubUser
+import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel
+import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel.UiState
 import com.guichristovao.appstartup.theme.ui.component.ProfileCard
 import com.guichristovao.appstartup.theme.ui.component.User
 import com.guichristovao.appstartup.theme.ui.theme.AppStartupTheme
 
 @Composable
-fun GitHubScreen(
-    viewModel: GitHubViewModel = viewModel()
+fun ProfileScreen(
+    viewModel: ProfileViewModel = viewModel()
 ) {
     AppStartupTheme {
         Surface(
@@ -42,7 +42,7 @@ fun GitHubScreen(
 @Composable
 private fun ContentDefault() {
     Text(
-        text = "GitHub user not loaded yet",
+        text = "User profile not loaded yet",
         color = MaterialTheme.colors.onBackground
     )
 }
@@ -54,7 +54,7 @@ private fun ContentLoading() {
 
 @Composable
 private fun ContentSuccess(state: UiState.Success) {
-    with(state.gitHubUser) {
+    with(state.user) {
         ProfileCard(
             user = User(avatarUrl, name, login)
         )
@@ -64,7 +64,7 @@ private fun ContentSuccess(state: UiState.Success) {
 @Composable
 private fun ContentError(state: UiState.Error) {
     Text(
-        text = "Error loading GitHub user: ${state.message}",
+        text = "Error loading user profile: ${state.message}",
         color = MaterialTheme.colors.error
     )
 }

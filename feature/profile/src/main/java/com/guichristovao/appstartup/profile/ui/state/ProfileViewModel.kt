@@ -1,11 +1,11 @@
-package com.guichristovao.appstartup.github.ui.state
+package com.guichristovao.appstartup.profile.ui.state
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.guichristovao.appstartup.github.data.GitHubRepository
-import com.guichristovao.appstartup.github.data.model.GitHubUser
+import com.guichristovao.appstartup.profile.data.ProfileRepository
+import com.guichristovao.appstartup.profile.data.model.GitHubUser
 import com.guichristovao.appstartup.network_support.ExceptionHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -14,15 +14,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class GitHubViewModel @Inject constructor(
-    private val gitHubRepository: GitHubRepository,
+class ProfileViewModel @Inject constructor(
+    private val profileRepository: ProfileRepository,
     private val exceptionHandler: ExceptionHandler
 ) : ViewModel() {
 
     sealed class UiState {
         object Default : UiState()
         object Loading : UiState()
-        data class Success(val gitHubUser: GitHubUser) : UiState()
+        data class Success(val user: GitHubUser) : UiState()
         data class Error(val message: String?) : UiState()
     }
 
@@ -38,7 +38,7 @@ class GitHubViewModel @Inject constructor(
     fun getUser(user: String?) {
         _uiState.value = UiState.Loading
         viewModelScope.launch(Dispatchers.IO + coroutineHandler) {
-            val result = gitHubRepository.getUser(user)
+            val result = profileRepository.getUser(user)
             _uiState.postValue(UiState.Success(result))
         }
     }

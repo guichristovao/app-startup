@@ -1,10 +1,10 @@
-package com.guichristovao.appstartup.github.data.source.remote
+package com.guichristovao.appstartup.profile.data.source.remote
 
-import com.guichristovao.appstartup.github.data.model.GitHubUser
+import com.guichristovao.appstartup.profile.data.model.GitHubUser
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface GitHubService {
+interface ProfileService {
 
     @GET("users/{user}")
     suspend fun getUser(

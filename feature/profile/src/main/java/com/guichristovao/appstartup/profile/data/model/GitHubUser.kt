@@ -1,4 +1,4 @@
-package com.guichristovao.appstartup.github.data.model
+package com.guichristovao.appstartup.profile.data.model
 
 import androidx.compose.runtime.Immutable
 import com.google.gson.annotations.SerializedName
