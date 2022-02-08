@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     private val profileRepository: ProfileRepository,
-    private val exceptionHandler: ExceptionHandler
+    private val exceptionHandler: @JvmSuppressWildcards ExceptionHandler
 ) : ViewModel() {
 
     sealed class UiState {
