@@ -5,6 +5,7 @@ object Versions {
     const val lifecycle = "2.4.0"
     const val activityCompose = "1.4.0"
     const val coreSplashScreen = "1.0.0-beta01"
+    const val startupRuntime = "1.1.0"
     const val material = "1.5.0"
     const val retrofit = "2.9.0"
     const val gson = "2.8.5"

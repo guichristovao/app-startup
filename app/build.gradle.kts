@@ -57,6 +57,7 @@ dependencies {
     implementation(AndroidX.core)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleRuntime)
+    implementation(AndroidX.startupRuntime)
 
     debugImplementation(Compose.uiTooling)
 

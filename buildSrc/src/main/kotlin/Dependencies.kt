@@ -22,6 +22,7 @@ object AndroidX {
     val lifecycleViewModelCompose by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycle}" }
     val activityCompose by lazy { "androidx.activity:activity-compose:${Versions.activityCompose}" }
     val coreSplashScreen by lazy { "androidx.core:core-splashscreen:${Versions.coreSplashScreen}" }
+    val startupRuntime by lazy { "androidx.startup:startup-runtime:${Versions.startupRuntime}" }
 
     /**
      * Test
