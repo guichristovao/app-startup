@@ -5,12 +5,13 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -27,51 +28,62 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.guichristovao.appstartup.theme.ui.modifier.defaultPlaceholder
 import com.guichristovao.appstartup.theme.ui.theme.AppStartupTheme
 
 @Immutable
 data class User(
-    val avatarUrl: String,
-    val name: String,
-    val login: String
+    val avatarUrl: String? = "",
+    val name: String = "",
+    val login: String = ""
 )
 
 @Composable
 fun ProfileCard(
-    user: User,
+    user: User?,
     modifier: Modifier = Modifier,
     onClick: (String) -> Unit = {}
 ) {
+    val hasPlaceholder = user == null
+
     Card(
         modifier = modifier
-            .width(180.dp)
-            .wrapContentHeight()
+            .wrapContentSize()
             .padding(bottom = 16.dp)
+            .clickable(
+                enabled = !hasPlaceholder,
+                onClick = { onClick(user?.login ?: "") }
+            )
     ) {
         Column(
             modifier = Modifier
-                .clickable(onClick = { onClick(user.login) })
-                .fillMaxWidth()
+                .width(180.dp)
                 .padding(16.dp)
         ) {
             ProfileImage(
-                avatarUrl = user.avatarUrl,
+                avatarUrl = user?.avatarUrl,
                 contentDescription = null,
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .size(120.dp)
+                    .defaultPlaceholder(hasPlaceholder)
             )
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = user.name,
+                text = user?.name ?: "",
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colors.onBackground,
-                modifier = Modifier.padding(top = 16.dp)
+                color = MaterialTheme.colors.onSurface,
+                modifier = Modifier
+                    .defaultPlaceholder(hasPlaceholder, 180.dp, 50.dp)
             )
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = user.login,
+                text = user?.login ?: "",
                 style = MaterialTheme.typography.subtitle1,
-                color = MaterialTheme.colors.onBackground
+                color = MaterialTheme.colors.onSurface,
+                modifier = Modifier
+                    .defaultPlaceholder(hasPlaceholder, 100.dp, 20.dp)
             )
         }
     }
@@ -80,7 +92,7 @@ fun ProfileCard(
 @OptIn(ExperimentalCoilApi::class)
 @Composable
 fun ProfileImage(
-    avatarUrl: String,
+    avatarUrl: String?,
     contentDescription: String?,
     modifier: Modifier = Modifier,
     elevation: Dp = 0.dp
@@ -94,11 +106,7 @@ fun ProfileImage(
     ) {
         Image(
             painter = rememberImagePainter(
-                data = avatarUrl,
-                builder = {
-                    crossfade(true)
-                    placeholder(drawableResId = android.R.drawable.star_on)
-                }
+                data = avatarUrl
             ),
             contentDescription = contentDescription,
             modifier = Modifier.fillMaxSize(),

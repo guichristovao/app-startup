@@ -3,6 +3,7 @@ package com.guichristovao.appstartup.theme.ui.component
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -18,11 +19,11 @@ import com.guichristovao.appstartup.theme.ui.theme.AppStartupTheme
 @Composable
 fun Card(
     modifier: Modifier = Modifier,
-    shape: Shape = MaterialTheme.shapes.medium,
-    color: Color = MaterialTheme.colors.background,
-    contentColor: Color = MaterialTheme.colors.onBackground,
+    shape: Shape = RoundedCornerShape(16.dp),
+    color: Color = MaterialTheme.colors.surface,
+    contentColor: Color = MaterialTheme.colors.onSurface,
     border: BorderStroke? = null,
-    elevation: Dp = 4.dp,
+    elevation: Dp = 8.dp,
     content: @Composable () -> Unit
 ) {
     Surface(
