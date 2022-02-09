@@ -34,6 +34,6 @@ android {
 dependencies {
     api(project(":core:network-light"))
 
-    implementation(Square.retrofit)
-    implementation(Square.converterGson)
+    implementation(Libs.Square.retrofit)
+    implementation(Libs.Square.converterGson)
 }

@@ -33,14 +33,14 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Libs.AndroidX.Compose.version
     }
 }
 
 dependencies {
+    implementation(Libs.AndroidX.Compose.material)
+    implementation(Libs.AndroidX.Compose.Ui.tooling)
     implementation(Libs.Coil.coilCompose)
-    implementation(Compose.uiTooling)
-    implementation(Compose.material)
-    implementation(Google.material)
+    implementation(Libs.Google.material)
     implementation(Libs.Google.Accompanist.placeholderMaterial)
 }

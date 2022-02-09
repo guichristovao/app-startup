@@ -41,7 +41,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Libs.AndroidX.Compose.version
     }
     packagingOptions {
         resources {
@@ -54,18 +54,18 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":feature:profile"))
 
-    implementation(AndroidX.core)
-    implementation(AndroidX.appCompat)
-    implementation(AndroidX.lifecycleRuntime)
-    implementation(AndroidX.startupRuntime)
+    implementation(Libs.AndroidX.appCompat)
+    implementation(Libs.AndroidX.startupRuntime)
+    implementation(Libs.AndroidX.Core.core)
+    implementation(Libs.AndroidX.Lifecycle.runtime)
 
-    debugImplementation(Compose.uiTooling)
+    debugImplementation(Libs.AndroidX.Compose.Ui.tooling)
 
-    testImplementation(Test.junit)
+    testImplementation(Libs.JUnit.junit)
 
-    androidTestImplementation(AndroidX.junit)
-    androidTestImplementation(AndroidX.espresso)
-    androidTestImplementation(Compose.junit)
+    androidTestImplementation(Libs.AndroidX.Test.junit)
+    androidTestImplementation(Libs.AndroidX.Test.espresso)
+    androidTestImplementation(Libs.AndroidX.Compose.Ui.junit)
 
     implementation(Libs.Google.Dagger.hilt)
     kapt(Libs.Google.Dagger.hiltCompiler)

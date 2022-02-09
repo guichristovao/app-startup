@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation(AndroidX.core)
+    implementation(Libs.AndroidX.Core.core)
 
-    api(AndroidX.coreSplashScreen)
+    api(Libs.AndroidX.Core.splashScreen)
 }

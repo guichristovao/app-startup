@@ -35,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Libs.AndroidX.Compose.version
     }
 }
 
@@ -45,19 +45,19 @@ dependencies {
 
     api(project(":core:splash-screen"))
 
-    implementation(AndroidX.activityCompose)
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleViewModelCompose)
-    implementation(AndroidX.lifecycleLiveData)
-    implementation(Compose.material)
-    implementation(Compose.runtimeLiveData)
-    implementation(Compose.uiTooling)
-    implementation(Google.material)
-    implementation(Google.gson)
-    implementation(Square.retrofit)
-    implementation(Kotlin.coroutines)
-
+    implementation(Libs.AndroidX.activityCompose)
+    implementation(Libs.AndroidX.Lifecycle.viewModel)
+    implementation(Libs.AndroidX.Lifecycle.viewModelCompose)
+    implementation(Libs.AndroidX.Lifecycle.liveData)
+    implementation(Libs.AndroidX.Compose.material)
+    implementation(Libs.AndroidX.Compose.runtimeLiveData)
+    implementation(Libs.AndroidX.Compose.Ui.tooling)
+    implementation(Libs.Google.material)
+    implementation(Libs.Google.gson)
+    implementation(Libs.Square.retrofit)
+    implementation(Libs.Kotlin.coroutines)
     implementation(Libs.Google.Dagger.hilt)
+
     kapt(Libs.Google.Dagger.hiltCompiler)
 }
 
