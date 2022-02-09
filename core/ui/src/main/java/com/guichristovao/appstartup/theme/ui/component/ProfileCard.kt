@@ -66,7 +66,7 @@ fun ProfileCard(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .size(120.dp)
-                    .defaultPlaceholder(hasPlaceholder)
+                    .defaultPlaceholder(hasPlaceholder, shape = CircleShape)
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
