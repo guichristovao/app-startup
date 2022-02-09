@@ -10,6 +10,11 @@ object Libs {
             const val hilt = "com.google.dagger:hilt-android:$version"
             const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
         }
+
+        object Accompanist {
+            const val placeholderMaterial =
+                "com.google.accompanist:accompanist-placeholder-material:0.24.1-alpha"
+        }
     }
 }
 
@@ -47,6 +52,8 @@ object Compose {
 object Google {
     val material by lazy { "com.google.android.material:material:${Versions.material}" }
     val gson by lazy { "com.google.code.gson:gson:${Versions.gson}" }
+
+
 }
 
 object Square {

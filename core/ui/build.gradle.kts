@@ -42,4 +42,5 @@ dependencies {
     implementation(Compose.uiTooling)
     implementation(Compose.material)
     implementation(Google.material)
+    implementation(Libs.Google.Accompanist.placeholderMaterial)
 }
