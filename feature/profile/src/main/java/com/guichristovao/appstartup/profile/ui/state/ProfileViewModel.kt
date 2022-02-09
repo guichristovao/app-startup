@@ -10,6 +10,7 @@ import com.guichristovao.appstartup.theme.ui.component.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -38,6 +39,9 @@ class ProfileViewModel @Inject constructor(
     fun getUser(user: String?) {
         _uiState.value = UiState.Loading
         viewModelScope.launch(Dispatchers.IO + coroutineHandler) {
+            // Intentionally delays the request, so we can take a better glimpse of the view's
+            // loading skeleton
+            delay(3000)
             profileRepository.getUser(user).run {
                 _uiState.postValue(UiState.Success(User(avatarUrl, name, login)))
             }
