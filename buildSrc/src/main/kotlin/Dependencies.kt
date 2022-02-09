@@ -13,7 +13,6 @@ object Libs {
             object Ui {
                 const val ui = "androidx.compose.ui:ui:$version"
                 const val tooling = "androidx.compose.ui:ui-tooling:$version"
-                const val toolingPreview = "androidx.compose.ui:ui-tooling-preview:$version"
                 const val junit = "androidx.compose.ui:ui-test-junit4:$version"
             }
         }
@@ -26,7 +25,6 @@ object Libs {
         object Lifecycle {
             private const val version = "2.4.0"
 
-            const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
             const val liveData = "androidx.lifecycle:lifecycle-livedata-core-ktx:$version"
