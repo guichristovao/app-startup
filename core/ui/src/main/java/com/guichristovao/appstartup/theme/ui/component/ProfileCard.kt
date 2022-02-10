@@ -52,7 +52,7 @@ fun ProfileCard(
         ) {
             ProfileImage(
                 avatarUrl = user?.avatarUrl,
-                contentDescription = null,
+                contentDescription = "${user?.name ?: "user"} profile picture",
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .size(160.dp)
