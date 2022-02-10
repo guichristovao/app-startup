@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -57,7 +56,7 @@ fun ProfileCard(
     ) {
         Column(
             modifier = Modifier
-                .width(180.dp)
+                .wrapContentSize()
                 .padding(16.dp)
         ) {
             ProfileImage(
@@ -65,17 +64,17 @@ fun ProfileCard(
                 contentDescription = null,
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .size(120.dp)
+                    .size(160.dp)
                     .defaultPlaceholder(hasPlaceholder, shape = CircleShape)
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = user?.name ?: "",
                 overflow = TextOverflow.Ellipsis,
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.h5,
                 color = MaterialTheme.colors.onSurface,
                 modifier = Modifier
-                    .defaultPlaceholder(hasPlaceholder, 180.dp, 50.dp)
+                    .defaultPlaceholder(hasPlaceholder, 310.dp, 35.dp)
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
