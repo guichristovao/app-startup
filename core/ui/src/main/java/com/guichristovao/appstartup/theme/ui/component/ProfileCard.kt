@@ -99,7 +99,7 @@ fun ProfileImage(
 ) {
     Surface(
         color = Color.LightGray,
-        border = BorderStroke(2.dp, MaterialTheme.colors.primary),
+        border = BorderStroke(2.dp, Color(0xFF6a1b9a)),
         elevation = elevation,
         shape = CircleShape,
         modifier = modifier

@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel
@@ -22,7 +23,7 @@ fun ProfileScreen(
 ) {
     AppStartupTheme {
         Surface(
-            color = MaterialTheme.colors.primary,
+            color = Color(0xFF6a1b9a),
             modifier = Modifier.fillMaxSize()
         ) {
             when (val state = viewModel.uiState.observeAsState().value) {
