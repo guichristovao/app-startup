@@ -12,7 +12,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Qualifier
 
 @Module
@@ -40,17 +40,18 @@ object ProfileModule {
 
     @Provides
     @ProfileRemoteDataSource
-    fun provideProfileRemoteDataSource(service: ProfileService): ProfileDataSource {
-        return ProfileRemoteDataSource(service)
+    fun provideProfileRemoteDataSource(
+        service: ProfileService,
+        @IoDispatcher ioDispatcher: CoroutineDispatcher
+    ): ProfileDataSource {
+        return ProfileRemoteDataSource(service, ioDispatcher)
     }
 
     @Provides
     fun provideProfileRepository(
-        @ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource
+        @ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource,
+        @IoDispatcher ioDispatcher: CoroutineDispatcher
     ): ProfileRepository {
-        return DefaultProfileRepository(profileRemoteDataSource)
+        return DefaultProfileRepository(profileRemoteDataSource, ioDispatcher)
     }
-
-    @Provides
-    fun provideIoDispatcher() = Dispatchers.IO
 }
