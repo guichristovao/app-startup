@@ -11,17 +11,14 @@ import com.guichristovao.appstartup.profile.data.source.remote.ProfileService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityRetainedComponent
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Qualifier
 
 @Module
-@InstallIn(ActivityRetainedComponent::class)
+@InstallIn(SingletonComponent::class)
 object ProfileModule {
-
-    @Qualifier
-    @Retention(AnnotationRetention.BINARY)
-    annotation class ProfileRemoteDataSource
 
     @Provides
     fun provideNetwork(): Network {
@@ -29,13 +26,22 @@ object ProfileModule {
     }
 
     @Provides
-    fun provideProfileService(network: Network): ProfileService {
-        return network.createService(ProfileService::class.java)
-    }
-
-    @Provides
     fun provideExceptionHandler(network: Network): ExceptionHandler {
         return network::onFailure
+    }
+}
+
+@Module
+@InstallIn(ViewModelComponent::class)
+object ProfileDataSourceModule {
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class ProfileRemoteDataSource
+
+    @Provides
+    fun provideProfileService(network: Network): ProfileService {
+        return network.createService(ProfileService::class.java)
     }
 
     @Provides
@@ -46,10 +52,15 @@ object ProfileModule {
     ): ProfileDataSource {
         return ProfileRemoteDataSource(service, ioDispatcher)
     }
+}
+
+@Module
+@InstallIn(ViewModelComponent::class)
+object ProfileRepositoryModule {
 
     @Provides
     fun provideProfileRepository(
-        @ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource,
+        @ProfileDataSourceModule.ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource,
         @IoDispatcher ioDispatcher: CoroutineDispatcher
     ): ProfileRepository {
         return DefaultProfileRepository(profileRemoteDataSource, ioDispatcher)
