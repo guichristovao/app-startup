@@ -6,7 +6,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,7 +26,7 @@ fun ProfileScreen(
             color = Color(0xFF6a1b9a),
             modifier = Modifier.fillMaxSize()
         ) {
-            when (val state = viewModel.uiState.observeAsState().value) {
+            when (val state = viewModel.uiState.collectAsState().value) {
                 is UiState.Default, UiState.Loading -> ContentLoading()
                 is UiState.Success -> ContentSuccess(state.user)
                 is UiState.Error -> ContentError(state)
