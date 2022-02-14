@@ -55,10 +55,17 @@ dependencies {
     implementation(Libs.Google.material)
     implementation(Libs.Google.gson)
     implementation(Libs.Square.retrofit)
-    implementation(Libs.Kotlin.coroutines)
+    implementation(Libs.Kotlin.Coroutines.android)
     implementation(Libs.Google.Dagger.hilt)
 
     kapt(Libs.Google.Dagger.hiltCompiler)
+
+    testImplementation(Libs.turbine)
+    testImplementation(Libs.mockk)
+    testImplementation(Libs.AndroidX.archCoreTesting)
+    testImplementation(Libs.Google.truth)
+    testImplementation(Libs.Google.Dagger.hiltTesting)
+    testImplementation(Libs.Kotlin.Coroutines.test)
 }
 
 kapt {

@@ -1,8 +1,12 @@
 object Libs {
+    const val mockk = "io.mockk:mockk:1.12.2"
+    const val turbine = "app.cash.turbine:turbine:0.7.0"
+
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.4.1"
         const val activityCompose = "androidx.activity:activity-compose:1.4.0"
         const val startupRuntime = "androidx.startup:startup-runtime:1.1.0"
+        const val archCoreTesting = "androidx.arch.core:core-testing:2.1.0"
 
         object Compose {
             const val version = "1.1.0-rc01"
@@ -43,12 +47,15 @@ object Libs {
     object Google {
         const val material = "com.google.android.material:material:1.5.0"
         const val gson = "com.google.code.gson:gson:2.8.5"
+        const val truth = "com.google.truth:truth:1.1.3"
 
         object Dagger {
             private const val version = "2.38.1"
-            const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+
             const val hilt = "com.google.dagger:hilt-android:$version"
+            const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
             const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
+            const val hiltTesting = "com.google.dagger:hilt-android-testing:$version"
         }
 
         object Accompanist {
@@ -69,6 +76,11 @@ object Libs {
     }
 
     object Kotlin {
-        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
+        object Coroutines {
+            private const val version = "1.5.2"
+
+            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+        }
     }
 }
