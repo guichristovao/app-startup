@@ -7,7 +7,6 @@ import com.guichristovao.appstartup.profile.data.source.DefaultProfileRepository
 import com.guichristovao.appstartup.theme.ui.component.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -37,9 +36,7 @@ class ProfileViewModel @Inject constructor(
     fun getUser(user: String?) {
         viewModelScope.launch(coroutineHandler) {
             _uiState.value = UiState.Loading
-            // Intentionally delays the request, so we can take a better glimpse of the view's
-            // loading skeleton
-            delay(3000)
+
             defaultProfileRepository.getUser(user).run {
                 _uiState.value = UiState.Success(User(avatarUrl, name, login))
             }
