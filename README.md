@@ -24,16 +24,16 @@
 # Structure
 ```
 .
-├── app                   # Project sample (android-application)
-├── buildSrc              # Dependency management with Kotlin DSL
+├── app                 # Project sample (android-application)
+├── buildSrc            # Dependency management with Kotlin DSL
 ├── core
-│   ├── network           # Network layer implementation (android-library)
-│   ├── network-light     # Network layer abstraction (android-library)
-│   ├── splash-screen     # Splash screen configurations (android-library)
-│   └── ui                # Theme and components (android-library)
+│   ├── network         # Network layer abstraction (android-library)
+│   ├── network-impl    # Network layer implementation (android-library)
+│   ├── splash-screen   # Splash screen configurations (android-library)
+│   └── ui              # Theme and components (android-library)
 └── feature
-    ├── menu              # Feature which doesn't depends on network requests (android-library)
-    └── profile           # Feature which depends on network requests (android-library)
+    ├── menu            # Feature which doesn't depends on network requests (android-library)
+    └── profile         # Feature which depends on network requests (android-library)
 ```
 
 # Architecture

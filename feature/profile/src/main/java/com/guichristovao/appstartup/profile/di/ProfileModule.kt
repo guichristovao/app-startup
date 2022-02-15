@@ -1,7 +1,7 @@
 package com.guichristovao.appstartup.profile.di
 
-import com.guichristovao.appstartup.network_support.ExceptionHandler
-import com.guichristovao.appstartup.network_support.Network
+import com.guichristovao.appstartup.network.ExceptionHandler
+import com.guichristovao.appstartup.network.Network
 import com.guichristovao.appstartup.profile.ProfileFeature
 import com.guichristovao.appstartup.profile.data.source.DefaultProfileRepository
 import com.guichristovao.appstartup.profile.data.source.ProfileDataSource

@@ -2,7 +2,7 @@ package com.guichristovao.appstartup.profile.ui.state
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.guichristovao.appstartup.network_support.ExceptionHandler
+import com.guichristovao.appstartup.network.ExceptionHandler
 import com.guichristovao.appstartup.profile.data.source.ProfileRepository
 import com.guichristovao.appstartup.theme.ui.component.User
 import dagger.hilt.android.lifecycle.HiltViewModel

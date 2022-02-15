@@ -1,7 +1,7 @@
-package com.guichristovao.appstartup.network
+package com.guichristovao.appstartup.network_impl
 
 import android.util.Log
-import com.guichristovao.appstartup.network_support.Network
+import com.guichristovao.appstartup.network.Network
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

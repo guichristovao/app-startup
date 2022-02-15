@@ -2,8 +2,8 @@ package com.guichristovao.appstartup.initializer.core
 
 import android.content.Context
 import androidx.startup.Initializer
-import com.guichristovao.appstartup.network.NetworkImpl
-import com.guichristovao.appstartup.network_support.Network
+import com.guichristovao.appstartup.network.Network
+import com.guichristovao.appstartup.network_impl.NetworkImpl
 
 class NetworkInitializer : Initializer<Network> {
     override fun create(context: Context): Network {

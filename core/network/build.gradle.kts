@@ -30,10 +30,3 @@ android {
         jvmTarget = "1.8"
     }
 }
-
-dependencies {
-    api(project(":core:network-light"))
-
-    implementation(Libs.Square.retrofit)
-    implementation(Libs.Square.converterGson)
-}

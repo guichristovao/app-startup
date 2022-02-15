@@ -1,6 +1,6 @@
 package com.guichristovao.appstartup.profile
 
-import com.guichristovao.appstartup.network_support.Network
+import com.guichristovao.appstartup.network.Network
 
 object ProfileFeature {
 

@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:network-light"))
+    implementation(project(":core:network"))
     implementation(project(":core:ui"))
 
     api(project(":core:splash-screen"))

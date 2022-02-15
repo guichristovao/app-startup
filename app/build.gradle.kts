@@ -51,7 +51,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:network"))
+    implementation(project(":core:network-impl"))
     implementation(project(":feature:profile"))
 
     implementation(Libs.AndroidX.appCompat)

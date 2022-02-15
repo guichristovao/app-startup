@@ -1,4 +1,4 @@
-package com.guichristovao.appstartup.network_support
+package com.guichristovao.appstartup.network
 
 typealias ExceptionHandler = (Throwable) -> Unit
 
