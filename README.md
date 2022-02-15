@@ -37,8 +37,7 @@
 ```
 
 # Architecture
-<img src="https://user-images.githubusercontent.com/35379633/153346850-9617a49b-41b3-42a7-b08d-2a47da8c0be3.gif" alt="Project's architecture flowchart"/>
-
+<img src="https://user-images.githubusercontent.com/35379633/153996531-d10a5231-d221-47ef-bc00-62eb532d1010.gif" alt="Project's architecture flowchart"/>
 
 :construction:
 
