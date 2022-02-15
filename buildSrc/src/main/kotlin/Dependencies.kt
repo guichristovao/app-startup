@@ -9,7 +9,7 @@ object Libs {
         const val archCoreTesting = "androidx.arch.core:core-testing:2.1.0"
 
         object Compose {
-            const val version = "1.1.0-rc01"
+            const val version = "1.1.0"
 
             const val material = "androidx.compose.material:material:$version"
             const val runtimeLiveData = "androidx.compose.runtime:runtime-livedata:$version"
@@ -50,7 +50,7 @@ object Libs {
         const val truth = "com.google.truth:truth:1.1.3"
 
         object Dagger {
-            private const val version = "2.38.1"
+            private const val version = "2.40.5"
 
             const val hilt = "com.google.dagger:hilt-android:$version"
             const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
@@ -77,7 +77,7 @@ object Libs {
 
     object Kotlin {
         object Coroutines {
-            private const val version = "1.5.2"
+            private const val version = "1.6.0"
 
             const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
             const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
