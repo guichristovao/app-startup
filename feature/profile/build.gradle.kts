@@ -62,7 +62,6 @@ dependencies {
 
     testImplementation(Libs.turbine)
     testImplementation(Libs.mockk)
-    testImplementation(Libs.AndroidX.archCoreTesting)
     testImplementation(Libs.Google.truth)
     testImplementation(Libs.Google.Dagger.hiltTesting)
     testImplementation(Libs.Kotlin.Coroutines.test)

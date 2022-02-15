@@ -1,10 +1,8 @@
 package com.guichristovao.appstartup.profile.ui.state
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.guichristovao.appstartup.network_support.ExceptionHandler
-import com.guichristovao.appstartup.profile.MainCoroutineScopeRule
 import com.guichristovao.appstartup.profile.data.source.FakeProfileRepository
 import com.guichristovao.appstartup.profile.data.source.ProfileRepository
 import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel.UiState
@@ -13,10 +11,14 @@ import io.mockk.justRun
 import io.mockk.mockk
 import io.mockk.slot
 import io.mockk.verify
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
+import org.junit.After
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
@@ -26,17 +28,18 @@ internal class ProfileViewModelTest {
     private lateinit var repository: ProfileRepository
     private lateinit var exceptionHandler: ExceptionHandler
 
-    @get:Rule
-    var instantExecutorRule = InstantTaskExecutorRule()
-
-    @get:Rule
-    var coroutineScope = MainCoroutineScopeRule()
-
     @Before
-    fun setupViewModel() {
+    fun setup() {
+        Dispatchers.setMain(StandardTestDispatcher())
+
         repository = FakeProfileRepository()
         exceptionHandler = mockk(relaxed = true)
         viewModel = ProfileViewModel(repository, exceptionHandler)
+    }
+
+    @After
+    fun tearDown() {
+        Dispatchers.resetMain()
     }
 
     @Test
@@ -45,7 +48,7 @@ internal class ProfileViewModelTest {
     }
 
     @Test
-    fun getUser_setsSuccessState() = coroutineScope.runBlockingTest {
+    fun getUser_setsSuccessState() = runTest {
         val expectedUser = User("fakeAvatarUrl", "fakeName", "fakeUser")
 
         viewModel.uiState.test {
@@ -59,7 +62,7 @@ internal class ProfileViewModelTest {
     }
 
     @Test
-    fun requestException_getUser_setsErrorState() = coroutineScope.runBlockingTest {
+    fun requestException_getUser_setsErrorState() = runTest {
         viewModel.uiState.test {
             viewModel.getUser(null)
 
@@ -71,11 +74,14 @@ internal class ProfileViewModelTest {
     }
 
     @Test
-    fun requestException_getUser_invokeExceptionHandler() = coroutineScope.runBlockingTest {
+    fun requestException_getUser_invokeExceptionHandler() {
         val slot = slot<Exception>()
-        justRun { exceptionHandler(capture(slot)) }
 
-        viewModel.getUser(null)
+        runTest {
+            justRun { exceptionHandler(capture(slot)) }
+
+            viewModel.getUser(null)
+        }
 
         verify { exceptionHandler(any<RuntimeException>()) }
         assertThat(slot.captured.message).isEqualTo("fakeMessage")

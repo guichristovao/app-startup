@@ -3,7 +3,7 @@ package com.guichristovao.appstartup.profile.data.source
 import com.google.common.truth.Truth.assertThat
 import com.guichristovao.appstartup.profile.data.model.GitHubUser
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
 
@@ -15,13 +15,13 @@ class DefaultProfileRepositoryTest {
     private lateinit var repository: ProfileRepository
 
     @Before
-    fun setupRepository() {
+    fun setup() {
         remoteDataSource = FakeDataSource(remoteGitHubUser)
         repository = DefaultProfileRepository(remoteDataSource)
     }
 
     @Test
-    fun getUser_returnsGitHubUser() = runBlockingTest {
+    fun getUser_returnsGitHubUser() = runTest {
         val actualGitHubUser = repository.getUser("fakeUser")
 
         assertThat(actualGitHubUser).isEqualTo(remoteGitHubUser)

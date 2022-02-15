@@ -6,7 +6,6 @@ object Libs {
         const val appCompat = "androidx.appcompat:appcompat:1.4.1"
         const val activityCompose = "androidx.activity:activity-compose:1.4.0"
         const val startupRuntime = "androidx.startup:startup-runtime:1.1.0"
-        const val archCoreTesting = "androidx.arch.core:core-testing:2.1.0"
 
         object Compose {
             const val version = "1.1.0"
