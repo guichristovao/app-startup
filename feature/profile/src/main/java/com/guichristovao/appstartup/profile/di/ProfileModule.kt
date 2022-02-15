@@ -60,9 +60,8 @@ object ProfileRepositoryModule {
 
     @Provides
     fun provideProfileRepository(
-        @ProfileDataSourceModule.ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource,
-        @IoDispatcher ioDispatcher: CoroutineDispatcher
+        @ProfileDataSourceModule.ProfileRemoteDataSource profileRemoteDataSource: ProfileDataSource
     ): ProfileRepository {
-        return DefaultProfileRepository(profileRemoteDataSource, ioDispatcher)
+        return DefaultProfileRepository(profileRemoteDataSource)
     }
 }
