@@ -12,13 +12,14 @@
 
 # Table of contents
 1. [Introduction](#introduction)
-2. [Architecture](#architecture)
+2. [Variations](#variations)
+3. [Architecture](#architecture)
     - [Structure](#structure)
     - [Diagram](#diagram)
     - [Stack](#stack)
-3. [Implementation](#implementation)
+4. [Implementation](#implementation)
     - [Tests](#tests)
-4. [Roadmap](#roadmap)
+5. [Roadmap](#roadmap)
 
 # Introduction
 <!-- This is an Android showcase project with the objective of implementing the best practices recommended by Google on how to start an app. -->
@@ -33,6 +34,16 @@ The main goal of this project is to implement the best practices on how to start
 - [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui)
 - [Branded launch](https://material.io/design/communication/launch-screen.html#branded-launch)
 
+# Variations
+This project hosts two sample apps in separate repository branches.
+
+|     Branch    |  Description  |
+| ------------- | ------------- |
+| [main](https://github.com/guichristovao/app-startup/tree/main) | Default sample for this project. Uses profile feature as first loading screen. |
+| lazy-initialization* | Uses an static feature as first loading screen and implements [lazy initialization](https://developer.android.com/topic/libraries/app-startup#manual) of other components. |
+<!-- | [lazy-initialization*](https://github.com/guichristovao/app-startup/tree/lazy-initialization)<br/>[[compare](https://github.com/guichristovao/app-startup/compare/lazy-initialization#files_bucket)] | Uses an static feature as first loading screen and implements [lazy initialization](https://developer.android.com/topic/libraries/app-startup#manual) of other components. | -->
+
+> \* work in progress
 
 # Architecture
 App Startup is a multi-module project built with [MVVM Architecture](https://developer.android.com/jetpack/guide#recommended-app-arch).
@@ -48,9 +59,11 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 │   ├── splash-screen   # Splash screen configurations (android-library)
 │   └── ui              # Theme and components (android-library)
 └── feature
-    ├── menu            # Feature which doesn't depends on network requests (android-library)
+    ├── menu*           # Feature which doesn't depends on network requests (android-library)
     └── profile         # Feature which depends on network requests (android-library)
 ```
+
+> \* the **feature:menu** module is used only on [lazy-initialization variation](#variations)
 
 ## Diagram
 <img src="https://user-images.githubusercontent.com/35379633/153996531-d10a5231-d221-47ef-bc00-62eb532d1010.gif" alt="Project's architecture flowchart"/>
@@ -83,6 +96,7 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 
 # Roadmap
 - Add UI tests.
+- Add [lazy-initialization variation](#variations) branch.
 - Add [Room](https://developer.android.com/training/data-storage/room) to cache network data.
 - Add [animated icon to splash screen](https://developer.android.com/reference/kotlin/androidx/core/splashscreen/SplashScreen#themes). 
 - Add [GitHub Actions](https://github.com/features/actions).
