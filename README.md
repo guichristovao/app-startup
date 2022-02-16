@@ -71,4 +71,6 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 :construction:
 
 # Roadmap
-:construction:
+- Add UI tests.
+- Add [Room](https://developer.android.com/training/data-storage/room) to cache network data.
+- Add [GitHub Actions](https://github.com/features/actions).
