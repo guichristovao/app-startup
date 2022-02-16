@@ -54,6 +54,7 @@ dependencies {
     implementation(project(":core:network-impl"))
     implementation(project(":feature:profile"))
 
+    implementation(Libs.AndroidX.activityCompose)
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.startupRuntime)
     implementation(Libs.AndroidX.Core.core)
