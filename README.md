@@ -24,6 +24,8 @@
 :construction:
 
 # Architecture
+App Startup is a multi-module project built with [MVVM Architecture](https://developer.android.com/jetpack/guide#recommended-app-arch).
+
 ## Structure
 ```
 .
@@ -40,8 +42,6 @@
 ```
 
 ## Diagram
-App Startup is a multi-module project built with [MVVM Architecture](https://developer.android.com/jetpack/guide#recommended-app-arch).
-
 <img src="https://user-images.githubusercontent.com/35379633/153996531-d10a5231-d221-47ef-bc00-62eb532d1010.gif" alt="Project's architecture flowchart"/>
 
 ## Stack
