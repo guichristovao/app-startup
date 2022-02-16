@@ -4,7 +4,7 @@
 
 <div align="center">
   
-  # :construction: Work in progress! :construction:
+  ## :construction: Work in progress :construction:
   
 </div>
   
@@ -21,7 +21,18 @@
 4. [Roadmap](#roadmap)
 
 # Introduction
-:construction:
+<!-- This is an Android showcase project with the objective of implementing the best practices recommended by Google on how to start an app. -->
+This is an Android showcase project based on a simple feature using [GitHub API](https://docs.github.com/en/rest).
+
+The main goal of this project is to implement the best practices on how to start an app, as recommended by Google and seen here:
+- [App startup time](https://developer.android.com/topic/performance/vitals/launch-time)
+- [App Startup](https://developer.android.com/topic/libraries/app-startup)
+- [Splash screens](https://developer.android.com/guide/topics/ui/splash-screen)
+- [Remove the custom splash screen Activity](https://developer.android.com/guide/topics/ui/splash-screen/migrate#remove_the_custom_splash_screen_activity)
+- [Use Room to fetch and cache data](https://developer.android.com/docs/quality-guidelines/build-for-billions/connectivity#network-arch)
+- [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui)
+- [Branded launch](https://material.io/design/communication/launch-screen.html#branded-launch)
+
 
 # Architecture
 App Startup is a multi-module project built with [MVVM Architecture](https://developer.android.com/jetpack/guide#recommended-app-arch).
