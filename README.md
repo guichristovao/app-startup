@@ -173,8 +173,8 @@ As recommended [here](https://developer.android.com/guide/topics/ui/splash-scree
 :construction:
 
 # Roadmap
-- Add UI tests.
-- Add [lazy-initialization variation](#variations) branch.
-- Add [Room](https://developer.android.com/training/data-storage/room) to cache network data.
-- Add [animated icon to splash screen](https://developer.android.com/reference/kotlin/androidx/core/splashscreen/SplashScreen#themes). 
-- Add [GitHub Actions](https://github.com/features/actions).
+- [ ] UI tests.
+- [ ] [lazy-initialization variation](#variations) branch.
+- [ ] [Room](https://developer.android.com/training/data-storage/room) to cache network data.
+- [ ] [animated icon to splash screen](https://developer.android.com/reference/kotlin/androidx/core/splashscreen/SplashScreen#themes). 
+- [ ] [GitHub Actions](https://github.com/features/actions).
