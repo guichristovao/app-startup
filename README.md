@@ -93,7 +93,8 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 <img align="right" src="https://user-images.githubusercontent.com/35379633/154383745-46aacd08-c5ec-4169-a07b-3a5d78f1e06a.gif" alt="Preview of the splash screen opening, followed by a loading skeleton template screen." width="280" style="display: inline; float: right"/>
 
 ## [Splash Screen](https://developer.android.com/guide/topics/ui/splash-screen)
-Includes an into-app motion at launch, a splash screen showing your app icon, and a transition to your app itself.
+Includes an into-app motion at launch, a splash screen showing your app icon, and a transition to your app itself.</br>
+As recommended by [Material Design](https://material.io/design/communication/launch-screen.html#placeholder-ui), a branded indicator is displayed until a placeholder UI loads.
 
 ```kotlin
 // feature:profile
@@ -112,11 +113,13 @@ fun Activity.showSplashScreen(keepOnScreenCondition: () -> Boolean) {
 }
 ```
 
-It's also possible to [keep the splash screen on-screen for longer periods](https://developer.android.com/guide/topics/ui/splash-screen#suspend-drawing), setting the condition on an observable such as [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow) or [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) value.
+It's also possible to [keep the splash screen on-screen for longer periods](https://developer.android.com/guide/topics/ui/splash-screen#suspend-drawing) by setting a condition on an observable value such as [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow) or [LiveData](https://developer.android.com/topic/libraries/architecture/livedata).
 
 ```kotlin
 showSplashScreen { viewModel.uiState.value is ProfileViewModel.UiState.Success }
 ```
+
+In this approach the [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui) is not used, since the first screen will only be shown to the user when its contents has fully loaded. 
 
 ## [App Startup](https://developer.android.com/topic/libraries/app-startup)
 It provides a performant way to initialize components and explicitly define their dependencies.
