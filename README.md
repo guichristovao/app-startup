@@ -119,7 +119,7 @@ It's also possible to [keep the splash screen on-screen for longer periods](http
 showSplashScreen { viewModel.uiState.value is ProfileViewModel.UiState.Success }
 ```
 
-In this approach the [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui) is not used, since the first screen will only be shown to the user when its contents has fully loaded. 
+In this approach the [Placeholder UI](#placeholder-ui) is not used, since the first screen will only be shown to the user when its contents has fully loaded. 
 
 ## [App Startup](https://developer.android.com/topic/libraries/app-startup)
 It provides a performant way to initialize components and explicitly define their dependencies.
@@ -165,7 +165,7 @@ This can be done by implementing the [Initializer\<T\>](https://developer.androi
 
 Also known as [skeleton screen](https://www.lukew.com/ff/entry.asp?1797). It shows a content placeholder while network-based data is being fetched, instead of displaying a blank screen or a default loading animation.
   
-This was done using [Accompanist-placeholder](https://github.com/google/accompanist/tree/main/placeholder-material), a library for Jetpack Compose.
+This was done using [Accompanist-placeholder](https://github.com/google/accompanist/tree/main/placeholder-material), a library for [Jetpack Compose](https://developer.android.com/jetpack/compose).
 
 As recommended [here](https://developer.android.com/guide/topics/ui/splash-screen/migrate#remove_the_custom_splash_screen_activity) and [here](https://developer.android.com/docs/quality-guidelines/build-for-billions/connectivity#network-arch), the placeholder is most likely to be shown only when a user opens the app for the first time. The next time this user returns to the app, we can show a cached content while a more recent content is loaded. 
   
