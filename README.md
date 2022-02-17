@@ -1,15 +1,5 @@
 <img src="https://user-images.githubusercontent.com/35379633/153341610-4ea46111-e1c7-44e1-ab34-c760958fd461.gif" alt="Banner with the project name and the following description: An Android project implementing some good practices on starting an app. It also shows an animated preview of a sample app."/>
 
-</br>
-
-<div align="center">
-  
-  ## :construction: Work in progress :construction:
-  
-</div>
-  
-</br>
-
 # Table of contents
 1. [Introduction](#introduction)
 2. [Variations](#variations)
@@ -170,7 +160,13 @@ This was done using [Accompanist-placeholder](https://github.com/google/accompan
 As recommended [here](https://developer.android.com/guide/topics/ui/splash-screen/migrate#remove_the_custom_splash_screen_activity) and [here](https://developer.android.com/docs/quality-guidelines/build-for-billions/connectivity#network-arch), the placeholder is most likely to be shown only when a user opens the app for the first time. The next time this user returns to the app, we can show a cached content while a more recent content is loaded. 
   
 # Tests
-:construction:
+
+## Unit tests
+- [UI-State layer](https://developer.android.com/jetpack/guide/ui-layer) (ViewModel)
+- [Data layer](https://developer.android.com/jetpack/guide/data-layer) (Repository and Data Sources)
+  
+## UI tests
+- :construction: Work in progress :construction:
 
 # Roadmap
 - [ ] UI tests.
