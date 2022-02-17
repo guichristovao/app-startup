@@ -160,13 +160,11 @@ This was done using [Accompanist-placeholder](https://github.com/google/accompan
 As recommended [here](https://developer.android.com/guide/topics/ui/splash-screen/migrate#remove_the_custom_splash_screen_activity) and [here](https://developer.android.com/docs/quality-guidelines/build-for-billions/connectivity#network-arch), the placeholder is most likely to be shown only when a user opens the app for the first time. The next time this user returns to the app, we can show a cached content while a more recent content is loaded. 
   
 # Tests
-
-## Unit tests
-- [UI-State layer](https://developer.android.com/jetpack/guide/ui-layer) (ViewModel)
-- [Data layer](https://developer.android.com/jetpack/guide/data-layer) (Repository and Data Sources)
-  
-## UI tests
-- :construction: Work in progress :construction:
+- Unit tests
+    - [UI-State layer](https://developer.android.com/jetpack/guide/ui-layer) (ViewModel)
+    - [Data layer](https://developer.android.com/jetpack/guide/data-layer) (Repository and Data Sources)
+- UI tests
+    - :construction: Work in progress :construction:
 
 # Roadmap
 - [ ] UI tests.
