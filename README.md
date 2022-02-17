@@ -89,7 +89,72 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 - [Turbine](https://github.com/cashapp/turbine)
 
 # Implementation
-:construction:
+
+<img align="right" src="https://user-images.githubusercontent.com/35379633/154383745-46aacd08-c5ec-4169-a07b-3a5d78f1e06a.gif" alt="Preview of the splash screen opening, followed by a loading skeleton template screen." width="280" style="display: inline; float: right"/>
+
+## [Splash Screen](https://developer.android.com/guide/topics/ui/splash-screen)
+Includes an into-app motion at launch, a splash screen showing your app icon, and a transition to your app itself.
+
+```kotlin
+// feature:profile
+override fun onCreate(savedInstanceState: Bundle?) {
+    showSplashScreen { viewModel.uiState.value is ProfileViewModel.UiState.Default }
+    super.onCreate(savedInstanceState)
+    // ...
+}
+
+// core:splash-screen
+fun Activity.showSplashScreen(keepOnScreenCondition: () -> Boolean) {
+    installSplashScreen().run {
+        setKeepOnScreenCondition(keepOnScreenCondition)
+        setOnExitAnimationListener { ... }
+    }
+}
+```
+
+It's also possible to [keep the splash screen on-screen for longer periods](https://developer.android.com/guide/topics/ui/splash-screen#suspend-drawing), setting the condition on an observable such as [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow) or [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) value.
+
+```kotlin
+showSplashScreen { viewModel.uiState.value is ProfileViewModel.UiState.Success }
+```
+
+## [App Startup](https://developer.android.com/topic/libraries/app-startup)
+It provides a performant way to initialize components and explicitly define their dependencies.
+
+To automatically initialize components at startup, you must define a component initializer for each component that the app needs to initialize.</br>
+This can be done by implementing the [Initializer\<T\>](https://developer.android.com/reference/kotlin/androidx/startup/Initializer) interface and [setting the manifest entries](https://developer.android.com/topic/libraries/app-startup#manifest-entries).
+
+<details open>
+  <summary>ProfileInitializer</summary>
+  
+  ```kotlin
+  class ProfileInitializer : Initializer<Unit> {
+      override fun create(context: Context) {
+          ProfileFeature.init(NetworkImpl)
+      }
+      override fun dependencies(): List<Class<out Initializer<*>>> {
+          //  This is only called after NetworkInitializer is initialized
+          return listOf(NetworkInitializer::class.java)
+      }
+  }
+  ```
+</details>
+
+<details>
+  <summary>NetworkInitializer</summary>
+
+  ```kotlin
+  class NetworkInitializer : Initializer<Network> {
+      override fun create(context: Context): Network {
+          return NetworkImpl
+      }
+      override fun dependencies(): List<Class<out Initializer<*>>> {
+          // No dependencies on other components
+          return emptyList()
+      }
+  }
+  ```
+</details>
 
 # Tests
 :construction:
