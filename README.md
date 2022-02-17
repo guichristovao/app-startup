@@ -86,6 +86,8 @@ It provides a performant way to initialize components and explicitly define thei
 To automatically initialize components at startup, you must define a component initializer for each component that the app needs to initialize.</br>
 This can be done by implementing the [Initializer\<T\>](https://developer.android.com/reference/kotlin/androidx/startup/Initializer) interface and [setting the manifest entries](https://developer.android.com/topic/libraries/app-startup#manifest-entries).
 
+Since this sample project uses the [abstract network module](https://github.com/guichristovao/app-startup/tree/main/core/network) to consume the [GitHub API](https://docs.github.com/en/rest), the [profile feature](https://github.com/guichristovao/app-startup/tree/main/feature/profile) module initialization shall depend on the [network-impl module](https://github.com/guichristovao/app-startup/tree/main/core/network-impl) to provide of a concrete implementation of a [Retrofit interface](https://github.com/square/retrofit).
+
 <details open>
   <summary>ProfileInitializer</summary>
   
