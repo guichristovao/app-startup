@@ -166,6 +166,8 @@ This can be done by implementing the [Initializer\<T\>](https://developer.androi
 Also known as [skeleton screen](https://www.lukew.com/ff/entry.asp?1797). It shows a content placeholder while network-based data is being fetched, instead of displaying a blank screen or a default loading animation.
   
 This was done using [Accompanist-placeholder](https://github.com/google/accompanist/tree/main/placeholder-material), a library for Jetpack Compose.
+
+As recommended [here](https://developer.android.com/guide/topics/ui/splash-screen/migrate#remove_the_custom_splash_screen_activity) and [here](https://developer.android.com/docs/quality-guidelines/build-for-billions/connectivity#network-arch), the placeholder is most likely to be shown only when a user opens the app for the first time. The next time this user returns to the app, we can show a cached content while a more recent content is loaded. 
   
 # Tests
 :construction:
