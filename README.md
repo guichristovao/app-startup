@@ -90,11 +90,11 @@ App Startup is a multi-module project built with [MVVM Architecture](https://dev
 
 # Implementation
 
-<img align="right" src="https://user-images.githubusercontent.com/35379633/154383745-46aacd08-c5ec-4169-a07b-3a5d78f1e06a.gif" alt="Preview of the splash screen opening, followed by a loading skeleton template screen." width="280" style="display: inline; float: right"/>
+<img align="right" src="https://user-images.githubusercontent.com/35379633/154383745-46aacd08-c5ec-4169-a07b-3a5d78f1e06a.gif" alt="Preview of the splash screen opening, followed by a screen with a loading placeholder UI." width="280" style="display: inline; float: right"/>
 
 ## [Splash Screen](https://developer.android.com/guide/topics/ui/splash-screen)
 Includes an into-app motion at launch, a splash screen showing your app icon, and a transition to your app itself.</br>
-As recommended by [Material Design](https://material.io/design/communication/launch-screen.html#placeholder-ui), a branded indicator is displayed until a placeholder UI loads.
+As recommended by [Material Design](https://material.io/design/communication/launch-screen.html#placeholder-ui), a branded indicator is displayed until a [placeholder UI](#placeholder-ui) loads.
 
 ```kotlin
 // feature:profile
@@ -158,7 +158,15 @@ This can be done by implementing the [Initializer\<T\>](https://developer.androi
   }
   ```
 </details>
+  
+## [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui)
 
+<img align="right" src="https://user-images.githubusercontent.com/35379633/154398183-068394b3-36d7-488a-801f-3e7cc960829f.gif" alt="A placeholder UI loading its content on a small white retangular container." width="280" style="display: inline; float: right"/>
+
+Also known as [skeleton screen](https://www.lukew.com/ff/entry.asp?1797). It shows a content placeholder while network-based data is being fetched, instead of displaying a blank screen or a default loading animation.
+  
+This was done using [Accompanist-placeholder](https://github.com/google/accompanist/tree/main/placeholder-material), a library for Jetpack Compose.
+  
 # Tests
 :construction:
 
