@@ -136,7 +136,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 fun Activity.showSplashScreen(keepOnScreenCondition: () -> Boolean) {
     installSplashScreen().run {
         setKeepOnScreenCondition(keepOnScreenCondition)
-        setOnExitAnimationListener { ... }
+        setOnExitAnimationListener { /** Custom animation */ }
     }
 }
 ```
