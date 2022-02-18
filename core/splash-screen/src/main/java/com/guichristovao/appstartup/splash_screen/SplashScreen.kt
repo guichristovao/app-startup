@@ -6,12 +6,13 @@ import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.splashscreen.SplashScreen.KeepOnScreenCondition
 
 fun Activity.showSplashScreen(
-    keepOnScreenCondition: () -> Boolean
+    condition: KeepOnScreenCondition? = null
 ) {
     installSplashScreen().run {
-        setKeepOnScreenCondition(keepOnScreenCondition)
+        condition?.let { ::setKeepOnScreenCondition }
         setOnExitAnimationListener { provider ->
             ObjectAnimator.ofFloat(
                 provider.view,
