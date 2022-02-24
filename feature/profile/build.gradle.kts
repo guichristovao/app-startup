@@ -43,8 +43,6 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:ui"))
 
-    api(project(":core:splash-screen"))
-
     implementation(Libs.AndroidX.activityCompose)
     implementation(Libs.AndroidX.Lifecycle.viewModel)
     implementation(Libs.AndroidX.Lifecycle.viewModelCompose)

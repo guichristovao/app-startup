@@ -58,6 +58,7 @@ dependencies {
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.startupRuntime)
     implementation(Libs.AndroidX.Core.core)
+    implementation(Libs.AndroidX.Core.splashScreen)
     implementation(Libs.AndroidX.Navigation.compose)
     implementation(Libs.Google.Dagger.Hilt.hilt)
 
