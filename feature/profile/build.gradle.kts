@@ -54,14 +54,15 @@ dependencies {
     implementation(Libs.Google.gson)
     implementation(Libs.Square.retrofit)
     implementation(Libs.Kotlin.Coroutines.android)
-    implementation(Libs.Google.Dagger.hilt)
+    implementation(Libs.Google.Dagger.Hilt.hilt)
+    implementation(Libs.Google.Dagger.Hilt.navigationCompose)
 
-    kapt(Libs.Google.Dagger.hiltCompiler)
+    kapt(Libs.Google.Dagger.Hilt.compiler)
 
     testImplementation(Libs.turbine)
     testImplementation(Libs.mockk)
     testImplementation(Libs.Google.truth)
-    testImplementation(Libs.Google.Dagger.hiltTesting)
+    testImplementation(Libs.Google.Dagger.Hilt.testing)
     testImplementation(Libs.Kotlin.Coroutines.test)
 }
 

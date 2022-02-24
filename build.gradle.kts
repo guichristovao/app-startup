@@ -10,7 +10,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:$gradleVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath(Libs.Google.Dagger.hiltPlugin)
+        classpath(Libs.Google.Dagger.Hilt.plugin)
     }
 }
 

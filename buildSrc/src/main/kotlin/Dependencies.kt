@@ -30,6 +30,10 @@ object Libs {
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
         }
 
+        object Navigation {
+            const val compose = "androidx.navigation:navigation-compose:2.4.1"
+        }
+
         object Test {
             const val junit = "androidx.test.ext:junit:1.1.3"
             const val espresso = "androidx.test.espresso:espresso-core:3.4.0"
@@ -48,10 +52,14 @@ object Libs {
         object Dagger {
             private const val version = "2.40.5"
 
-            const val hilt = "com.google.dagger:hilt-android:$version"
-            const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
-            const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
-            const val hiltTesting = "com.google.dagger:hilt-android-testing:$version"
+            object Hilt {
+                const val hilt = "com.google.dagger:hilt-android:$version"
+                const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+                const val compiler = "com.google.dagger:hilt-android-compiler:$version"
+                const val testing = "com.google.dagger:hilt-android-testing:$version"
+                const val navigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
+            }
+
         }
 
         object Accompanist {

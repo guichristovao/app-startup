@@ -58,17 +58,18 @@ dependencies {
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.startupRuntime)
     implementation(Libs.AndroidX.Core.core)
+    implementation(Libs.AndroidX.Navigation.compose)
+    implementation(Libs.Google.Dagger.Hilt.hilt)
 
     debugImplementation(Libs.AndroidX.Compose.Ui.tooling)
+
+    kapt(Libs.Google.Dagger.Hilt.compiler)
 
     testImplementation(Libs.JUnit.junit)
 
     androidTestImplementation(Libs.AndroidX.Test.junit)
     androidTestImplementation(Libs.AndroidX.Test.espresso)
     androidTestImplementation(Libs.AndroidX.Compose.Ui.junit)
-
-    implementation(Libs.Google.Dagger.hilt)
-    kapt(Libs.Google.Dagger.hiltCompiler)
 }
 
 kapt {
