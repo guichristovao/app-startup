@@ -26,7 +26,7 @@
         </provider>
 
         <activity
-            android:name="com.guichristovao.appstartup.profile.ui.element.ProfileActivity"
+            android:name="com.guichristovao.appstartup.ui.element.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>

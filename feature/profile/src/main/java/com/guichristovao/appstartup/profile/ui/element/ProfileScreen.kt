@@ -10,7 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel
 import com.guichristovao.appstartup.profile.ui.state.ProfileViewModel.UiState
 import com.guichristovao.appstartup.theme.ui.component.ProfileCard
@@ -18,8 +18,16 @@ import com.guichristovao.appstartup.theme.ui.component.User
 import com.guichristovao.appstartup.theme.ui.theme.AppStartupTheme
 
 @Composable
-fun ProfileScreen(
-    viewModel: ProfileViewModel = viewModel()
+fun ProfileScreen() {
+    with(hiltViewModel<ProfileViewModel>()) {
+        getUser("guichristovao")
+        ProfileScreen(this)
+    }
+}
+
+@Composable
+internal fun ProfileScreen(
+    viewModel: ProfileViewModel
 ) {
     AppStartupTheme {
         Surface(
