@@ -30,6 +30,10 @@ object Libs {
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
         }
 
+        object Navigation {
+            const val compose = "androidx.navigation:navigation-compose:2.4.1"
+        }
+
         object Test {
             const val junit = "androidx.test.ext:junit:1.1.3"
             const val espresso = "androidx.test.espresso:espresso-core:3.4.0"

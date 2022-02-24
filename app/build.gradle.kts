@@ -58,6 +58,7 @@ dependencies {
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.startupRuntime)
     implementation(Libs.AndroidX.Core.core)
+    implementation(Libs.AndroidX.Navigation.compose)
 
     debugImplementation(Libs.AndroidX.Compose.Ui.tooling)
 
